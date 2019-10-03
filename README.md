@@ -1,4 +1,4 @@
-# Sample Node Server
+# Node Server
 
 The code can be used as a starting point for a Node Express Application.
 
