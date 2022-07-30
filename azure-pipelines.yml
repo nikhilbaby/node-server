@@ -17,12 +17,12 @@ steps:
 
 - script: |
     npm install
-    echo $(Build.BinariesDirectory)
-    ls -al $(Build.BinariesDirectory)
+    echo $(Build.SourcesDirectory)
+    ls -al $(Build.SourcesDirectory)
   displayName: 'npm install'
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/app.zip'
