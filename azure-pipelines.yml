@@ -17,4 +17,18 @@ steps:
 
 - script: |
     npm install
-  displayName: 'npm install and build'
+  displayName: 'npm install'
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/app.zip'
+    replaceExistingArchive: true
+
+- task: S3Upload@1
+  inputs:
+    awsCredentials: 'AWS-S3'
+    regionName: 'us-east-1'
+    bucketName: 'asdzxc-2022'
+    globExpressions: '**'
