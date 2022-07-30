@@ -17,6 +17,7 @@ steps:
 
 - script: |
     npm install
+    echo $(Build.BinariesDirectory)
   displayName: 'npm install'
 - task: ArchiveFiles@2
   inputs:
