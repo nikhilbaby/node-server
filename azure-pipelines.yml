@@ -31,4 +31,4 @@ steps:
     awsCredentials: 'AWS-S3'
     regionName: 'us-east-1'
     bucketName: 'asdzxc-2022'
-    globExpressions: '**'
+    globExpressions: '$(Build.ArtifactStagingDirectory)/app.zip'
